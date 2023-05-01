@@ -8,3 +8,8 @@
 
 SELECT Customers.FirstName, Customers.LastName,
 Reservations.Date, Reservations.PartySize
+FROM Reservations
+JOIN Customers ON Customers.CustomerID = Reservations.CustomerID
+WHERE Customers.LastName LIKE 'St%'
+AND PartySize = 4
+ORDER BY Reservations.Date DESC;
